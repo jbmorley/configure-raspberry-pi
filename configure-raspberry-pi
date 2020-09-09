@@ -38,14 +38,15 @@ def get_boolean(description):
 
 def main():
     parser = argparse.ArgumentParser(description="Script for configuring a Rapsberry Pi boot image.")
+    parser.add_argument("--root", default="/Volumes/boot", help="path to the root of the boot volume (defaults to /Volumes/boot)")
     options = parser.parse_args()
 
     if get_boolean("Enable SSH?"):
-        touch("/Volumes/boot/ssh")
+        touch(os.path.join(options.root, "ssh"))
 
     if get_boolean("Configure WiFi?"):
         ssid, psk = get_input("SSID"), get_input("Password")
-        with open("/Volumes/boot/wpa_supplicant.conf", "w") as fh:
+        with open(os.path.join(options.root, "wpa_supplicant.conf"), "w") as fh:
             fh.write(TEMPLATE % (ssid, psk))
 
 
