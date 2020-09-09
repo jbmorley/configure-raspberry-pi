@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import sys
+
+
+TEMPLATE = """
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=GB
+
+network={
+    ssid="%s"
+    psk="%s"
+    key_mgmt=WPA-PSK
+}
+"""
+
+
+def touch(fname, times=None):
+    with open(fname, 'a'):
+        os.utime(fname, times)
+
+
+def get_input(description):
+    sys.stdout.write(f"{description}: ")
+    return input()
+
+
+def get_boolean(description):
+    result = ""
+    while result.lower() not in ["y", "n"]:
+        sys.stdout.write(f"{description} [y/n] ")
+        result = input()
+    return result.lower() == "y"
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Script for configuring a Rapsberry Pi boot image.")
+    options = parser.parse_args()
+
+    if get_boolean("Enable SSH?"):
+        touch("/Volumes/boot/ssh")
+
+    if get_boolean("Configure WiFi?"):
+        ssid, psk = get_input("SSID"), get_input("Password")
+        with open("/Volumes/boot/wpa_supplicant.conf", "w") as fh:
+            fh.write(TEMPLATE % (ssid, psk))
+
+
+if __name__ == "__main__":
+    main()
