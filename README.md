@@ -4,6 +4,15 @@ Script to automatically configure a Raspberry Pi boot volume
 
 ![Screen recording of configure-raspberry-pi in action](preview.gif)
 
+## Functionality
+
+The following options can be configured:
+
+- WiFi
+- SSH
+
+This initial functionality comes from a personal need; I expect to add more over time, and willingly accept pull requests.
+
 ## Installation
 
 Simply clone the repository:
@@ -19,6 +28,8 @@ export PATH=$PATH:~/path/to/configure-raspberry-pi
 ```
 
 ## Usage
+
+Run the following command, and answer the various commands:
 
 ```bash
 configure-rasbperry-pi
