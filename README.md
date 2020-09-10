@@ -1,6 +1,6 @@
 # configure-raspberry-pi
 
-Script to automatically configure a Raspberry Pi boot volume
+Interactive script for configuring a Raspberry Pi boot partition
 
 ![Screen recording of configure-raspberry-pi in action](preview.gif)
 
