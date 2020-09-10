@@ -41,3 +41,6 @@ The script currently expects to be run on macOS and assumes your Raspberry Pi `b
 configure-raspberry-pi --boot /mnt/boot
 ```
 
+## Alternatives
+
+There are doubtless many alternatives out there. If you're looking for something significantly more comprehensive, I encourage you to take a look at [PiBakery](https://www.pibakery.org/).
