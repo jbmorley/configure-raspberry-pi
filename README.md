@@ -2,7 +2,7 @@
 
 Interactive script for configuring a Raspberry Pi boot partition
 
-![Screen recording of configure-raspberry-pi in action](preview.gif)
+![Screen recording of configure-raspberry-pi in action](images/preview.gif)
 
 ## Functionality
 
@@ -43,4 +43,9 @@ configure-raspberry-pi --boot /mnt/boot
 
 ## Alternatives
 
-There are doubtless many alternatives out there. If you're looking for something significantly more comprehensive, I encourage you to take a look at [PiBakery](https://www.pibakery.org/).
+The Raspberry Pi Imager has support for configuring both WiFi and SSH (along with a host of other options), making it a better solution in many scenarios. These can be accessed by pressing 'Ctrl + Shift + X'.
+
+![Advanced options in the Raspberry Pi Imager](images/raspberry-pi-imager.png)
+
+There are doubtless also many other alternatives out there. If you're looking for something significantly more comprehensive, I encourage you to take a look at [PiBakery](https://www.pibakery.org/).
+
