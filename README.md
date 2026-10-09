@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+>
+> This project has been archived and will not be maintained or developed further.
+
 # configure-raspberry-pi
 
 Interactive script for configuring a Raspberry Pi boot partition
